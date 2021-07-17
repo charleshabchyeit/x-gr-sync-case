@@ -24,12 +24,12 @@ output application/java
 			</ee:variables>
 		</ee:transform>
 		<flow-ref doc:name="mule-common-logger-subflow" doc:id="00a7ca67-8248-45af-8abf-fe9eb6bb9b91" name="mule-common-logger-subflow" />
-		<http:request method="GET" doc:name="Get Tree from Docubase" doc:id="4dc1c253-0b6b-4b0b-b605-82ac37b922d5" config-ref="HTTP_Request_Process_configuration" path="#['${config.docubase.endpoint.getTree}']" >
-			<http:headers ><![CDATA[#[output application/java
+		<http:request method="GET" doc:name="Request" doc:id="4dc1c253-0b6b-4b0b-b605-82ac37b922d5" config-ref="http-request-config-p-gr-sync-case" path="#['${config.docubase.endpoint.getTree}']" >
+			<http:headers ><![CDATA[#[output application/json
 ---
 {
-	"client_secret" : 111,
-	"client_id" : 111
+	"client_id" : attributes.headers.client_id,
+	"client_secret" : attributes.headers.client_secret
 }]]]></http:headers>
 			<http:query-params ><![CDATA[#[output application/java
 ---

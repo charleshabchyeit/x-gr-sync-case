@@ -20,12 +20,12 @@ output application/java
 			</ee:variables>
 		</ee:transform>
 		<flow-ref doc:name="mule-common-logger-subflow" doc:id="a2f674a2-0d04-4243-a8f8-7aa70ca4df7e" name="mule-common-logger-subflow" />
-		<http:request method="GET" doc:name="Sync Case Task Ged SF" doc:id="8565e0d5-0bd9-4266-8c14-8d0c945bc298" config-ref="HTTP_Request_Process_configuration" path="#['${config.docubase.path.baseURI}' ++ '${config.docubase.endpoint.syncCaseTaskGedSf}']" responseTimeout="999999999">
-			<http:headers ><![CDATA[#[output application/java
+		<http:request method="GET" doc:name="Request" doc:id="8565e0d5-0bd9-4266-8c14-8d0c945bc298" config-ref="http-request-config-p-gr-sync-case" path="#['${config.docubase.path.baseURI}' ++ '${config.docubase.endpoint.syncCaseTaskGedSf}']" responseTimeout="999999999">
+			<http:headers ><![CDATA[#[output application/json
 ---
 {
-	"client_secret" : 111,
-	"client_id" : 111
+	"client_id" : attributes.headers.client_id,
+	"client_secret" : attributes.headers.client_secret
 }]]]></http:headers>
 		</http:request>
 		<ee:transform doc:name="Set Log Configuration" doc:id="d703377a-7cc9-41eb-adbb-7b469db031da">

@@ -8,7 +8,8 @@ api:
   version: "v1"
     
 http:
-  port: "8088"
+  private:
+    port: "8088"
   timeout: "99999999"
   listener:
     path: "/api/${api.name}/${api.version}/*"
