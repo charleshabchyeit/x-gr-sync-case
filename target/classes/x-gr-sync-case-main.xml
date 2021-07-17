@@ -10,7 +10,7 @@
                 <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
             </http:error-response>
         </http:listener>
-        <apikit:router config-ref="router-config-x-gr-sync-case" />
+        <apikit:router config-ref="x-gr-sync-case-config" />
     </flow>
     <flow name="x-gr-sync-case-console">
         <http:listener path="/console/*" config-ref="http-listener-config-x-gr-sync-case">
@@ -22,7 +22,7 @@
                 <http:headers><![CDATA[#[vars.outboundHeaders default {}]]]></http:headers>
             </http:error-response>
         </http:listener>
-        <apikit:console config-ref="router-config-x-gr-sync-case" />
+        <apikit:console config-ref="x-gr-sync-case-config" />
     </flow>
     <flow name="get:\api-status:x-gr-sync-case-config">
         <ee:transform xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
