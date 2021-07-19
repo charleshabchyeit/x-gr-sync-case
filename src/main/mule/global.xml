@@ -6,8 +6,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
 http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
-	 <apikit:config name="x-gr-sync-case-config" api="x-gr-sync-case.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
-	<http:request-config name="HTTP_Request_Process_configuration" doc:name="HTTP Request configuration" doc:id="53b45631-4e66-46b0-a0d6-ae70cbf2ee59" basePath="/${config.docubase.path.baseURI}">
+	 <apikit:config name="x-gr-sync-case-config" api="x-gr-sync-case.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" disableValidations="true"/>
+	<http:request-config name="http-request-config-p-gr-sync-case" doc:name="HTTP Request configuration" doc:id="53b45631-4e66-46b0-a0d6-ae70cbf2ee59" basePath="/${config.docubase.path.baseURI}">
 		<http:request-connection protocol="${config.protocol}" host="${config.host}" port="${config.port}" connectionIdleTimeout="${http.timeout}"/>
 	</http:request-config>	
 	<import doc:name="Import" doc:id="5986036d-70a6-4388-a554-a1bb47cf7f46" file="common/audit/audit.xml" />
@@ -22,8 +22,8 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 	<configuration-properties doc:name="Configuration properties" doc:id="2fdc8e73-ceca-4937-b013-d7669b4aba3a" file="environment\default-prop.yaml" />
 	<configuration doc:name="Configuration" doc:id="7d049f57-2884-4190-9ddc-4669911b4762" defaultErrorHandler-ref="api-global-error-handler" />
 		<http:listener-config
-		name="httpListenerConfigExperience">
+		name="http-listener-config-x-gr-sync-case">
 		<http:listener-connection host="0.0.0.0"
-			port="${http.port}" connectionIdleTimeout="${http.timeout}" />
+			port="${http.private.port}" connectionIdleTimeout="${http.timeout}" />
 	</http:listener-config>
 </mule>
