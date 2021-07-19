@@ -8,7 +8,7 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 				<ee:set-variable variableName="logMessage"><![CDATA[%dw 2.0
 output application/java
 ---
-'Experience cases from Docubase to Salesforce - Start']]></ee:set-variable>
+'Experience - Docubase to Salesforce - Updating Cases and Tasks - Start']]></ee:set-variable>
 				<ee:set-variable variableName="logCategory"><![CDATA[%dw 2.0
 output application/java
 ---
@@ -20,7 +20,7 @@ output application/java
 			</ee:variables>
 		</ee:transform>
 		<flow-ref doc:name="mule-common-logger-subflow" doc:id="a2f674a2-0d04-4243-a8f8-7aa70ca4df7e" name="mule-common-logger-subflow" />
-		<http:request method="GET" doc:name="Request" doc:id="8565e0d5-0bd9-4266-8c14-8d0c945bc298" config-ref="http-request-config-p-gr-sync-case" path="#['${config.docubase.path.baseURI}' ++ '${config.docubase.endpoint.syncCaseTaskGedSf}']" responseTimeout="999999999">
+		<http:request method="GET" doc:name="Request" doc:id="8565e0d5-0bd9-4266-8c14-8d0c945bc298" config-ref="http-request-config-p-gr-sync-case" path="#['${config.docubase.endpoint.syncCaseTaskGedSf}']" responseTimeout="999999999">
 			<http:headers ><![CDATA[#[output application/json
 ---
 {
@@ -34,7 +34,7 @@ output application/java
 				<ee:set-variable variableName="logMessage"><![CDATA[%dw 2.0
 output application/java
 ---
-'Experience cases from Docubase to Salesforce - Start']]></ee:set-variable>
+'Experience - Docubase to Salesforce - Updating Cases and Tasks - Finish']]></ee:set-variable>
 				<ee:set-variable variableName="logCategory"><![CDATA[%dw 2.0
 output application/java
 ---
