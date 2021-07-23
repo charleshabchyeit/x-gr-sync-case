@@ -64,7 +64,8 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		<http:listener-connection host="0.0.0.0"
 			port="${http.private.port}" connectionIdleTimeout="${http.timeout}" />
 	</http:listener-config>
-	<api-gateway:autodiscovery apiId="${api.id}"
-		ignoreBasePath="true" doc:name="API Autodiscovery"
-		doc:id="e778c253-c3d8-4756-9ec2-6eed8f82aac5" flowRef="x-gr-sync-case-main" />
+<!-- 	<api-gateway:autodiscovery apiId="${api.id}" -->
+<!-- 		ignoreBasePath="true" doc:name="API Autodiscovery" -->
+<!-- 		doc:id="e778c253-c3d8-4756-9ec2-6eed8f82aac5" -->
+<!-- 		flowRef="x-gr-sync-case-main" /> -->
 </mule>
