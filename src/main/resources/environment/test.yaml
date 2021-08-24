@@ -1,13 +1,43 @@
+# Environment specific properties
 environment:
- name: "![TYx63+PckT5A0h9oA9gWYQ==]"
-application:
- name: "Mule 4 Template API"
+ name: "test"
+  
 api:
- name: "mule-4-template-api-${secure::environment.name}"
- id: "15688395"
- version: "v1"
- http:
+  name: "${application.name}-${environment.name}"
+  id: "875577"
+  version: "v1"
+    
+http:
+  private:
+    port: "8091"
+  timeout: "99999999"
   listener:
-   path: "/api/${api.name}/${api.version}/*"
-   host: "0.0.0.0"
-   port: "8081"
+    path: "/api/${api.name}/${api.version}/*"
+
+https:
+  listener:
+    path: "/api/${api.name}/${api.version}/*"
+    
+config:
+  protocol: "HTTP"
+  host: "p-gr-sync-case.de-c1.eu1.cloudhub.io"
+  port: ""
+  docubase:
+    path:
+      baseURI: "api/p-gr-sync-case-test/v1"
+    endpoint:
+      getTree: "/getTree"
+      syncCaseTaskGedSf: "/syncCaseTaskGedSf"
+      syncCaseSFGed: "/syncCaseSFGed"
+      
+# Common properties
+common:
+  audit:
+    role:
+      logStart: "true"
+      logEnd: "true"
+      logInfo: "true"
+      logWarning: "true"
+      logError: "true"
+      logDebug: "true"
+    defaultLogPayloadLogic: "ALWAYS"

@@ -9,7 +9,7 @@ api:
     
 http:
   private:
-    port: "8091"
+    port: "8088"
   timeout: "99999999"
   listener:
     path: "/api/${api.name}/${api.version}/*"
@@ -20,8 +20,8 @@ https:
     
 config:
   protocol: "HTTP"
-  host: "p-gr-sync-case.de-c1.eu1.cloudhub.io"
-  port: ""
+  host: "localhost"
+  port: "8085"
   docubase:
     path:
       baseURI: "api/p-gr-sync-case-test/v1"
