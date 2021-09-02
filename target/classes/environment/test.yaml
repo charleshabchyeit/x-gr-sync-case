@@ -20,7 +20,7 @@ https:
     
 config:
   protocol: "HTTP"
-  host: "p-gr-sync-case.de-c1.eu1.cloudhub.io"
+  host: "p-gr-sync-case-test.de-c1.eu1.cloudhub.io"
   port: ""
   docubase:
     path:
