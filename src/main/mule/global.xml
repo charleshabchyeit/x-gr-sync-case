@@ -40,7 +40,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		file="common/error/global-error.xml" />
 	<global-property doc:name="Global Property"
 		doc:id="580ae0a2-2c52-4104-b65b-53b27b409590" name="mule.env"
-		value="devLocal" />
+		value="testLocal" />
 	<configuration-properties
 		doc:name="Configuration properties"
 		doc:id="2a934833-3759-4201-8bc3-dd1980500166"
