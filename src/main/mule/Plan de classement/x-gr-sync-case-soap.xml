@@ -24,7 +24,7 @@ output application/java
 			</ee:variables>
 		</ee:transform>
 		<flow-ref doc:name="mule-common-logger-subflow" doc:id="00a7ca67-8248-45af-8abf-fe9eb6bb9b91" name="mule-common-logger-subflow" />
-		<http:request method="GET" doc:name="Request" doc:id="4dc1c253-0b6b-4b0b-b605-82ac37b922d5" config-ref="http-request-config-p-gr-sync-case" path="#['${config.docubase.endpoint.getTree}']" >
+		<http:request method="GET" doc:name="Request" doc:id="4dc1c253-0b6b-4b0b-b605-82ac37b922d5" config-ref="http-request-config-p-gr-sync-case" path="#['${config.docubase.endpoint.getTree}']" responseTimeout="${http.timeout}">
 			<http:headers ><![CDATA[#[output application/json
 ---
 {

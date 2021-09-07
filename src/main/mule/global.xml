@@ -21,7 +21,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		basePath="/${config.docubase.path.baseURI}">
 		<http:request-connection
 			protocol="${config.protocol}" host="${config.host}"
-			port="${config.port}" connectionIdleTimeout="${http.timeout}" />
+			port="${config.port}"/>
 	</http:request-config>
 	<import doc:name="Import"
 		doc:id="5986036d-70a6-4388-a554-a1bb47cf7f46"
@@ -40,14 +40,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		file="common/error/global-error.xml" />
 	<global-property doc:name="Global Property"
 		doc:id="580ae0a2-2c52-4104-b65b-53b27b409590" name="mule.env"
-		value="devLocal" />
-	<global-property doc:name="Global Property"
-		doc:id="d08c799b-81dc-4dff-8ad1-91f4ef78e04a" name="mule.securefile"
-		value="dev-secure" />
-	<configuration-properties
-		doc:name="Configuration properties"
-		doc:id="131027f7-0eae-441c-8363-aa8dcb034f25"
-		file="secure/${mule.securefile}.yaml" />
+		value="testLocal" />
 	<configuration-properties
 		doc:name="Configuration properties"
 		doc:id="2a934833-3759-4201-8bc3-dd1980500166"
